@@ -131,9 +131,6 @@ export default {
         return;
       }
 
-      // 줄바꿈 db에 변환해서 저장
-      this.form.contents = this.contents.replace(/\n/g, "<br>");
-
       if (this.idx === undefined) {
         //INSERT
         this.$axios

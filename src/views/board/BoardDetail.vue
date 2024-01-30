@@ -66,8 +66,7 @@ export default {
         .then((res) => {
           this.title = res.data.title;
           this.author = res.data.author;
-          this.contents = res.data.contents;
-          // alert();
+          this.contents = res.data.contents.replace(/\n/g, "<br>");
           this.createdAt = res.data.createdAt;
         })
         .catch((err) => {
@@ -77,8 +76,19 @@ export default {
         });
     },
     async fnGetUserName(){
+      
+      //
+      // 수정중
+      // this.$axios.post(this.$serverUrl + '/user/test')
+      //   .then((res) => {
+      //     this.userName = res.data.user_name;
+      //   }).catch((err) => {
+      //     console.log(err)
+      //   })
+      //
+
       this.form = {
-        userId: sessionStorage.getItem("userId"),
+        userId: sessionStorage.getItem("userId"), // 수정 필요
       };
 
       const response = await userInfo(this.form);
